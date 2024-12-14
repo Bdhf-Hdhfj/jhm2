@@ -7,6 +7,11 @@ Data = {
     'Type': []  # 鍵 'City' 對應的值是一個列表
 }
 df = pd.DataFrame(Data)
+import os
+if os.path.isfile('expenses.csv'):
+    df = pd.read_csv('expenses.csv', index_col=0)
+    print("Data loaded from expenses.csv.")
+    print(df)
 A = "\nPersonal Expense Tracker\n1.Add Transaction\n2. Edit Transaction\n3. Delete Transaction\n4.View Summary\n5.Save and Exit\nEnter your choice: "
 B = input(A)
 while B != "5":
@@ -60,5 +65,5 @@ while B != "5":
         print("Try again")
 
     B = input(A)
-df.to_csv('expense.csv')
-print("Data saved to expense.csv.")
+df.to_csv('expenses.csv')
+print("Data saved to expenses.csv.")
