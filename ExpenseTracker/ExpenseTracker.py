@@ -65,5 +65,5 @@ while B != "5":
         print("Try again")
 
     B = input(A)
-df.to_csv('expenses.csv')
+df.to_csv('expenses.csv', index=False)
 print("Data saved to expenses.csv.")
