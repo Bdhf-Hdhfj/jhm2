@@ -9,9 +9,9 @@ Data = {
 df = pd.DataFrame(Data)
 import os
 if os.path.isfile('expenses.csv'):
-    df = pd.read_csv('expenses.csv', index_col=0)
+    df = pd.read_csv('expenses.csv')#, index_col=0)
     print("Data loaded from expenses.csv.")
-    print(df)
+    #print(df)
 A = "\nPersonal Expense Tracker\n1.Add Transaction\n2. Edit Transaction\n3. Delete Transaction\n4.View Summary\n5.Save and Exit\nEnter your choice: "
 B = input(A)
 while B != "5":
@@ -23,7 +23,7 @@ while B != "5":
         F = input("Enter the type (Expense/Income): ")
         df.loc[len(df.index)] = [C, D, E, F]
         print("Transaction added successfully.")
-        print(df)
+        #print(df)
     elif B == "2":
         print("Edit Transaction")
         G = int(input("Enter the transaction index to edit: "))
@@ -43,13 +43,13 @@ while B != "5":
         if F != "":
             df.loc[G,'Type'] = F
         print("Transaction updated successfully.")
-        print(df)
+        #print(df)
     elif B == "3":
         print("Delete Transaction")
         G = int(input("Enter the transaction index to delete: "))
         df = df.drop(labels=G)
         print("Transaction deleted successfully.")
-        print(df)
+        #print(df)
     elif B == "4":
         print("View Summary")
         print("\n--- Expenses Summary ---")
