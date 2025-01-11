@@ -1,15 +1,15 @@
 import pandas as pd
 
 Data = {
-    'Date': [],  # 鍵 'Name' 對應的值是一個列表
-    'Category': [],                  # 鍵 'Age' 對應的值是一個列表
+    'Date': [],  
+    'Category': [], 
     'Amount': [],
-    'Type': []  # 鍵 'City' 對應的值是一個列表
+    'Type': []  
 }
 df = pd.DataFrame(Data)
 import os
 if os.path.isfile('expenses.csv'):
-    df = pd.read_csv('expenses.csv')#, index_col=0)
+    df = pd.read_csv('expenses.csv')
     print("Data loaded from expenses.csv.")
     #print(df)
 A = "\nPersonal Expense Tracker\n1.Add Transaction\n2. Edit Transaction\n3. Delete Transaction\n4.View Summary\n5.Save and Exit\nEnter your choice: "
